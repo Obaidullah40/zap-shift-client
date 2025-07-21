@@ -12,6 +12,7 @@ import MyParcels from "../pages/Dashboard/MyParcels/MyParcels";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import TrackParcel from "../pages/Dashboard/TrackParcel/TrackParcel";
+import BeARider from "../pages/Dashboard/BeARider/BeARider";
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path: 'coverage',
                 Component: Coverage,
+                loader: () => fetch('./serviceCenter.json')
+            },
+            {
+                path: 'beARider',
+                element: <PrivateRoute><BeARider></BeARider></PrivateRoute>,
                 loader: () => fetch('./serviceCenter.json')
             },
             {
@@ -63,14 +69,22 @@ const router = createBrowserRouter([
                 path: 'payment/:parcelId',
                 Component: Payment
             },
-              {
+            {
                 path: 'paymentHistory',
                 Component: PaymentHistory
-              },
-              {
+            },
+            {
                 path: 'track',
                 Component: TrackParcel
-              }
+            },
+        //     {
+        //         path: 'pending-riders',
+        //         Component: PendingRiders
+        //     },
+        //     {
+        //         path: 'active-riders',
+        //         Component: ActiveRiders
+        //     }
         ]
     }
 ]);
