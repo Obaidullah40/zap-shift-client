@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router';
 import ProFastLogo from '../pages/shared/ProFastLogo/ProFastLogo';
-import { FaBoxOpen, FaMoneyCheckAlt, FaUserEdit, FaSearchLocation, FaHome } from 'react-icons/fa';
+import { FaBoxOpen, FaMoneyCheckAlt, FaUserEdit, FaSearchLocation, FaHome, FaUserClock, FaUserCheck } from 'react-icons/fa';
 
 const DashboardLayout = () => {
     return (
@@ -69,6 +69,19 @@ const DashboardLayout = () => {
                         <NavLink to="/dashboard/profile">
                             <FaUserEdit className="inline-block mr-2" />
                             Update Profile
+                        </NavLink>
+                    </li>
+                    {/* riders link */}
+                    <li>
+                        <NavLink to="/dashboard/active-riders">
+                            <FaUserCheck className="inline-block mr-2" />
+                            Active Riders
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard/pending-riders">
+                            <FaUserClock className="inline-block mr-2" />
+                            Pending Riders
                         </NavLink>
                     </li>
                 </ul>
